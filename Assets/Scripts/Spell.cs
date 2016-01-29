@@ -24,7 +24,6 @@ public class Spell : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Hit player");
             other.gameObject.GetComponent<Player>().TakeDamage(spellDamage);
         }
     }
