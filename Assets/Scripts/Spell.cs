@@ -13,12 +13,7 @@ public class Spell : MonoBehaviour {
     Player caster;
     
     enum SpellType { Fire, Ice, Water };
-
-    public Spell(Player p)
-    {
-        caster = p;
-    }
-
+    
 	// Use this for initialization
 	void Start ()
     {
@@ -37,5 +32,10 @@ public class Spell : MonoBehaviour {
             caster.gameObject.GetComponent<Player>().Heal(spellHeal);
         }
     }
-   
+
+    public void Initialize(Player p)
+    {
+        caster = p;
+    }
+
 }
