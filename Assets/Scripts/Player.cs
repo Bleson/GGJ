@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     float hpDrainPerSecond = 15; //How fast player gets healed or loses health.
     bool isAlive = true;
 
+    public GameObject spawnLocation;
     public Slider healthSlider;
     public Spell[] spellList;
 
@@ -31,6 +32,10 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(5);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            CastSpell(spellList[0]);
         }
     }
 
@@ -55,9 +60,10 @@ public class Player : MonoBehaviour {
         targetHealth += healAmount;
     }
     
-    public void CastSpell()
+    public void CastSpell(Spell spell)
     {
-
+        TakeDamage(spell.spellDamage);
+        Instantiate(spell, spawnLocation.transform.position, Quaternion.identity);
     }
 
     void Die()
