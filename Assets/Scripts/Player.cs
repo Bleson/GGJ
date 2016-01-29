@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
     float maxHealth = 100;
     float health = 100; //Current real health
     float targetHealth = 100; // Health after hp drain
-    float hpDrainPerSecond = 15; //How fast player gets healed or loses health.
+    public float hpDrainPerSecond = 15; //How fast player gets healed or loses health.
     bool isAlive = true;
 
     public GameObject spawnLocation;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
         {
             TakeDamage(5);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && id == 0)
         {
             CastSpell(spellList[0]);
         }
@@ -62,9 +62,10 @@ public class Player : MonoBehaviour {
     
     public void CastSpell(Spell spell)
     {
-        TakeDamage(spell.spellDamage);
+        TakeDamage(spell.cost);
         Spell clone = Instantiate(spell, spawnLocation.transform.position, Quaternion.identity) as Spell;
         clone.Initialize(this);
+        clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
     }
 
     void Die()

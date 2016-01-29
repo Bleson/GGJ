@@ -30,12 +30,20 @@ public class Spell : MonoBehaviour {
         {
             other.gameObject.GetComponent<Player>().TakeDamage(spellDamage);
             caster.gameObject.GetComponent<Player>().Heal(spellHeal);
+            Destroy(gameObject);
         }
     }
 
     public void Initialize(Player p)
     {
         caster = p;
+        if (caster.id == 0)
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(spellSpeed, 0);
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-spellSpeed, 0);
+        }
     }
-
 }
