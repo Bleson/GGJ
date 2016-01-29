@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+
 
 public class Player : MonoBehaviour {
 
@@ -10,17 +12,23 @@ public class Player : MonoBehaviour {
     float hpDrainPerSecond = 15; //How fast player gets healed or loses health.
     bool isAlive = true;
 
+    public Slider healthSlider;
     public Spell[] spellList;
 
-    void Init()
+    public void Init()
     {
         health = maxHealth;
         isAlive = true;
     }
 
+    public void Start()
+    {
+        gameObject.tag = "Player";
+    }
+
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(5);
         }
@@ -93,6 +101,7 @@ public class Player : MonoBehaviour {
                 targetHealth = health;
             }
         }
+        healthSlider.value = health;
         Debug.Log("Current health: " + health +  " Target health: " + targetHealth);
     }
 }
