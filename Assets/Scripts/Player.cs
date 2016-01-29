@@ -6,18 +6,23 @@ public class Player : MonoBehaviour {
     public int id; //Determines spell owner.
     float maxHealth = 100;
     float health = 100; //Current real health
-    float targetHealth; // Health after hp drain
-    float hpDrainPerSecond = 5; //How fast player gets healed or loses health.
+    float targetHealth = 100; // Health after hp drain
+    float hpDrainPerSecond = 15; //How fast player gets healed or loses health.
     bool isAlive = true;
 
     public Spell[] spellList;
 
+    void Init()
+    {
+        health = maxHealth;
+        isAlive = true;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown("Jump"))
+        if (Input.GetKey(KeyCode.Space))
         {
             TakeDamage(5);
-
         }
     }
 
@@ -32,12 +37,12 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         targetHealth -= damageAmount;
     }
 
-    public void Heal(int healAmount)
+    public void Heal(float healAmount)
     {
         targetHealth += healAmount;
     }
@@ -49,19 +54,45 @@ public class Player : MonoBehaviour {
 
     void Die()
     {
-
+        isAlive = false;
+        Debug.Log("Player " + id + " died.");
     }
-    
+
+    /// <summary>
+    /// Used to change player's current health in delay. To deal damage to player's target health, use TakeDamage() instead.
+    /// </summary>
+    /// <param name="healthDifference">Can be positive and negative.</param>
     void ChangeHealth(float healthDifference)
     {
-        if (healthDifference > hpDrainPerSecond * Time.fixedDeltaTime)
+        if (healthDifference < -hpDrainPerSecond * Time.fixedDeltaTime)
         {
-            health += hpDrainPerSecond * Time.fixedDeltaTime;
+            health -= hpDrainPerSecond * Time.fixedDeltaTime;
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+        else if (healthDifference > hpDrainPerSecond * Time.fixedDeltaTime)
+        {
+            if (health >= maxHealth)
+            {
+                health = maxHealth;
+                TakeDamage(hpDrainPerSecond * Time.fixedDeltaTime);
+            }
+            else
+            {
+                health += hpDrainPerSecond * Time.fixedDeltaTime;
+            }
         }
         else
         {
             health += healthDifference;
+            if (health >= maxHealth)
+            {
+                health = maxHealth;
+                targetHealth = health;
+            }
         }
-        Debug.Log(health);
+        Debug.Log("Current health: " + health +  " Target health: " + targetHealth);
     }
 }
