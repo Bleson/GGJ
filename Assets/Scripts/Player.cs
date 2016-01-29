@@ -63,7 +63,8 @@ public class Player : MonoBehaviour {
     public void CastSpell(Spell spell)
     {
         TakeDamage(spell.spellDamage);
-        Instantiate(spell, spawnLocation.transform.position, Quaternion.identity);
+        Spell clone = Instantiate(spell, spawnLocation.transform.position, Quaternion.identity) as Spell;
+        clone.Initialize(this);
     }
 
     void Die()
