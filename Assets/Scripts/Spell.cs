@@ -4,9 +4,9 @@ using System.Collections;
 public class Spell : MonoBehaviour {
 
     public string spellName = "";
-
-    public int spellId = 0;
+    
     public int spellDamage = 5;
+    public int spellSpeed = 5;
     
     enum SpellType { Fire, Ice, Water };
 
@@ -20,11 +20,15 @@ public class Spell : MonoBehaviour {
     {
 	}
 
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (coll.gameObject.tag == "Player")
+        Debug.Log(other.gameObject.name);
+
+        if (other.gameObject.tag == "Player")
         {
-            //Damage logic
+            Debug.Log("Hit player");
+            other.gameObject.GetComponent<Player>().TakeDamage(spellDamage);
         }
     }
+   
 }

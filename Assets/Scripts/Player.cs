@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown("Jump"))
         {
             TakeDamage(5);
-            
+
         }
     }
 
