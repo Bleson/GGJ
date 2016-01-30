@@ -15,7 +15,7 @@ GameObject:
   - 95: {fileID: 9507868}
   - 212: {fileID: 21226010}
   m_Layer: 0
-  m_Name: Spell_1_Fireball
+  m_Name: Spell_2_Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2f102afa5665547a5a2d7463f92482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: Lava shot
   cost: 40
   spellDamage: 30
   spellHeal: 40
@@ -144,7 +145,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: spellName
+      value: Lava shot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 158134}

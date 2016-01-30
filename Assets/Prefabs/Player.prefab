@@ -542,7 +542,8 @@ MonoBehaviour:
   - {fileID: 11495598}
   spells:
   - {fileID: 11457684, guid: a66fc8996a01b3447a9c8e254043b13e, type: 2}
-  - {fileID: 11487744, guid: 3feb9fd078cac004ca0ca17276816af1, type: 2}
+  - {fileID: 11468408, guid: fcb5990c04fd13b478f6534441eda9c4, type: 2}
+  - {fileID: 11407996, guid: be745c8e045bbe845a8b1246aeac0581, type: 2}
 --- !u!114 &11426024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -798,9 +799,9 @@ MonoBehaviour:
   healthSlider: {fileID: 11452280}
   targetHealthSlider: {fileID: 11498212}
   lastSpellsReset:
-  - {fileID: 11463234, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
-  - {fileID: 11463234, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
-  - {fileID: 11463234, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spellsToStore: 2
   playerOneInputs: 7100000077000000650000006100000073000000640000007a0000007800000063000000
   playerTwoInputs: 070100000801000009010000040100000501000006010000010100000201000003010000
@@ -1344,7 +1345,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 197.8096, y: 11.177006}
+  m_AnchoredPosition: {x: 100, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22483210
