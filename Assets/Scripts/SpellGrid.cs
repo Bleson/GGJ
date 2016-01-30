@@ -57,19 +57,21 @@ public class SpellGrid : MonoBehaviour {
                     canCast = true;
                 }
                 else
-                {
+                {   
                     spell = null;
                     canCast = false;
                 }
             }
             if (canCast)
                 break;
+            else canCast = true;
         }
 
-        Debug.Log("1" + canCast + " " + spell.name);
+        if (spell == null)
+            canCast = false;
+
         if (canCast)
         {
-            Debug.Log("2");
             caster.CastSpell(spell);
         }
 
