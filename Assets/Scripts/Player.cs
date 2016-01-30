@@ -5,6 +5,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    GameController gameController;
     public bool isPlayerOne; //Determines spell owner.
     float maxHealth = 100f;
     [SerializeField]
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour {
     public GameObject spellSpawnLocation;
     public SpellGrid spellGrid;
     public Slider healthSlider;
-    Spell[] lastSpells;
+    Spell[] lastSpells = {null};
     int currentSpellIndex = 0;
     public int lastSpellsToStore = 2;
 
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour {
 
     public void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         gameObject.tag = "Player";
         if (isPlayerOne)
         {
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour {
     {
         if (isAlive)
         {
+            //Controls check
             for (int i = 0; i < playerInputs.Length; i++)
             {
                 if (Input.GetKeyDown(playerInputs[i]))
@@ -74,6 +77,7 @@ public class Player : MonoBehaviour {
     {
         if (isAlive)
         {
+            //Update health
             if (health != targetHealth)
             {
                 ChangeHealth(targetHealth - health);
@@ -90,50 +94,12 @@ public class Player : MonoBehaviour {
     {
         targetHealth += healAmount;
     }
-    
-    public void CastSpell(Spell spell)
-    {
-        //Check if player has used the spell earlier once or multiple times
-        if (lastSpells[currentSpellIndex] == null)
-	    {
-		    
-	    }
-        else if (lastSpells[currentSpellIndex] == spell)
-        {
-            float spellDmgMultiplier = 1f;
-            for (int i = currentSpellIndex; i < lastSpellsToStore; i++)
-			{
-			    if (lastSpells[i] == spell)
-                {
-                    spellDmgMultiplier++;
-                }
-                else
-                    break;
-			}
-            TakeDamage(spell.cost * spellDmgMultiplier);
-        }
-        else
-        {
-            TakeDamage(spell.cost);
-        }
-
-        lastSpells[currentSpellIndex] = spell;
-        currentSpellIndex++;
-        if (currentSpellIndex > lastSpellsToStore - 1)
-        {
-            currentSpellIndex = 0;
-        }
-
-        //Create spell
-        Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;
-        clone.Initialize(this);
-        clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
-    }
 
     void Die()
     {
         isAlive = false;
         Debug.Log("Player " + isPlayerOne + " died.");
+        gameController.PlayerLoses(this);
     }
 
     /// <summary>
@@ -174,4 +140,44 @@ public class Player : MonoBehaviour {
         healthSlider.value = health;
         //Debug.Log("Current health: " + health +  " Target health: " + targetHealth);
     }
+
+    public void CastSpell(Spell spell)
+    {
+        //Check if player has used the spell earlier once or multiple times
+        /*if (lastSpells[currentSpellIndex] == null)
+	    {
+		    
+	    }*/
+        if (lastSpells[currentSpellIndex] == spell)
+        {
+            float spellDmgMultiplier = 1f;
+            for (int i = currentSpellIndex; i < lastSpellsToStore; i++)
+			{
+			    if (lastSpells[i] == spell)
+                {
+                    spellDmgMultiplier++;
+                }
+                else
+                    break;
+			}
+            TakeDamage(spell.cost * spellDmgMultiplier);
+        }
+        else
+        {
+            TakeDamage(spell.cost);
+        }
+
+        lastSpells[currentSpellIndex] = spell;
+        currentSpellIndex++;
+        if (currentSpellIndex > lastSpellsToStore - 1)
+        {
+            currentSpellIndex = 0;
+        }
+
+        //Create spell
+        Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;
+        clone.Initialize(this);
+        clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
+    }
+
 }
