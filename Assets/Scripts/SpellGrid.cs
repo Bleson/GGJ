@@ -4,11 +4,7 @@ using System.Collections;
 public class SpellGrid : MonoBehaviour {
 
     bool[] grid = new bool[9];
-
-    bool[] testGrid = {true , true, true,
-                      false, true, false,
-                      false, false, false};
-
+    
     public Button[] buttonArray = new Button[9];
     public Spell[] spells;
 
@@ -47,24 +43,33 @@ public class SpellGrid : MonoBehaviour {
 
     void CastSpell()
     {
-        bool isSpell = false;
+        bool canCast = true;
 
-        //TODO: find spells based on inputted pattern
-        Spell spell = spells[0];
-        
-        for(int i = 0; i < grid.Length; i++)
+        Spell spell = null;
+
+        foreach(Spell s in spells)
         {
-            if (grid[i] != testGrid[i])
+            for (int i = 0; i < grid.Length; i++)
             {
-                isSpell = false;
-                break;
+                if (s.spellPattern[i] == grid[i] && canCast)
+                {
+                    spell = s;
+                    canCast = true;
+                }
+                else
+                {
+                    spell = s;
+                    canCast = false;
+                }
             }
-            else
-                isSpell = true;
+            if (canCast)
+                break;
         }
 
-        if (isSpell)
+        Debug.Log("1" + canCast + " " + spell.name);
+        if (canCast)
         {
+            Debug.Log("2");
             caster.CastSpell(spell);
         }
 
