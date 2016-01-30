@@ -6,8 +6,8 @@ public class SpellGrid : MonoBehaviour {
     int[] grid = new int[9];
 
     int[] testGrid = {1, 1, 1,
-                      0, 1, 1,
-                      1, 1, 1,};
+                      0, 1, 0,
+                      0, 0, 0,};
 
     public Button[] buttonArray = new Button[9];
     public Spell[] spells;
