@@ -47,6 +47,7 @@ public class Spell : MonoBehaviour {
         else
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-spellSpeed, 0);
+            gameObject.transform.rotation = new Quaternion(0, 180f, 0, 0);
         }
     }
 }
