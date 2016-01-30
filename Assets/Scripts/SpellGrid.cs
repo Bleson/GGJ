@@ -6,6 +6,7 @@ public class SpellGrid : MonoBehaviour {
     int[] grid = new int[9];
 
     public Button[] buttonArray = new Button[9];
+    public Spell[] spells;
 
     Player caster;
 
@@ -17,29 +18,41 @@ public class SpellGrid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
 	}
 
     public void SetGrid(int hitKey, Player _caster)
     {
         caster = _caster;
 
-        //if center key is hit cast spell
-        if (grid[hitKey] == 4)
-            CastSpell();
-        //toggle grid value
-        else if (grid[hitKey] == 1)
+        // toggle grid value at right position
+        if (grid[hitKey] == 1)
             grid[hitKey] = 0;
         else
             grid[hitKey] = 1;
 
+
         DrawGrid();
+
+        // if center button cast spell
+        if (hitKey == 4)
+        {
+            CastSpell();
+        }
     }
 
     void CastSpell()
     {
-        Spell spell = (Spell)Resources.Load("/Prefabs/test spell");
-
+        Spell spell = spells[0];
+        
+        for(int i = 0; i < grid.Length; i++)
+        {
+            grid[i] = 0;
+        }
+        
         caster.CastSpell(spell);
+
+        DrawGrid();
     }
 
     void DrawGrid()
