@@ -4,7 +4,9 @@ using System.Collections;
 public class SpellGrid : MonoBehaviour {
 
     bool[] grid = new bool[9];
-    
+
+    Animator animator;
+
     public Button[] buttonArray = new Button[9];
     public Spell[] spells;
 
@@ -13,7 +15,7 @@ public class SpellGrid : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        animator = this.GetComponentInParent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -72,9 +74,9 @@ public class SpellGrid : MonoBehaviour {
 
         if (canCast)
         {
+            animator.SetInteger("State", 2);
             caster.CastSpell(spell);
         }
-
         Reset();
     }
 

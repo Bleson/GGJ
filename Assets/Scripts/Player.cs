@@ -5,6 +5,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    Animator animator;
     GameController gameController;
     public bool isPlayerOne; //Determines spell owner.
     float maxHealth = 100f;
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour {
 
     public void Start()
     {
+        animator = this.GetComponent<Animator>();
         lastSpells = lastSpellsReset;
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         gameObject.tag = "Player";
@@ -73,6 +75,7 @@ public class Player : MonoBehaviour {
             {
                 if (Input.GetKeyDown(playerInputs[i]))
                 {
+                    animator.SetInteger("State", 1);
                     //Debug.Log("Player " + isPlayerOne + " : " + i);
 
                     spellGrid.SetGrid(i, this);
