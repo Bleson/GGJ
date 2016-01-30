@@ -319,9 +319,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -49.02722, y: 0.51979065}
+  m_Offset: {x: -0.32751465, y: 0.5197754}
   serializedVersion: 2
-  m_Size: {x: 99.054474, y: 103.72998}
+  m_Size: {x: 101.837364, y: 103.72998}
 --- !u!114 &11401656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1090,7 +1090,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchoredPosition: {x: 670.6381, y: -27.086426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22483210
