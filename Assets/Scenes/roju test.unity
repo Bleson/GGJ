@@ -566,18 +566,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &2014126446
+--- !u!1 &1705491533
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 2014126451}
-  - 20: {fileID: 2014126450}
-  - 92: {fileID: 2014126449}
-  - 124: {fileID: 2014126448}
-  - 81: {fileID: 2014126447}
+  - 4: {fileID: 1705491538}
+  - 20: {fileID: 1705491537}
+  - 92: {fileID: 1705491536}
+  - 124: {fileID: 1705491535}
+  - 81: {fileID: 1705491534}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -585,33 +585,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2014126447
+--- !u!81 &1705491534
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2014126446}
+  m_GameObject: {fileID: 1705491533}
   m_Enabled: 1
---- !u!124 &2014126448
+--- !u!124 &1705491535
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2014126446}
+  m_GameObject: {fileID: 1705491533}
   m_Enabled: 1
---- !u!92 &2014126449
+--- !u!92 &1705491536
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2014126446}
+  m_GameObject: {fileID: 1705491533}
   m_Enabled: 1
---- !u!20 &2014126450
+--- !u!20 &1705491537
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2014126446}
+  m_GameObject: {fileID: 1705491533}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -640,12 +640,12 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!4 &2014126451
+--- !u!4 &1705491538
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2014126446}
+  m_GameObject: {fileID: 1705491533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
