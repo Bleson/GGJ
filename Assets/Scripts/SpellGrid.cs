@@ -58,7 +58,7 @@ public class SpellGrid : MonoBehaviour {
                 }
                 else
                 {
-                    spell = s;
+                    spell = null;
                     canCast = false;
                 }
             }
