@@ -15,10 +15,6 @@ public class SpellGrid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SetGrid(3, GetComponent<Player>());
-        }
 	}
 
     public void SetGrid(int hitKey, Player _caster)
