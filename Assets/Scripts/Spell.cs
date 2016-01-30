@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Spell : MonoBehaviour {
 
-    public string spellName = "";
-
     public float cost = 1; //spell cost, used to damage self
     public float spellDamage = 5; 
     public float spellHeal = 5; // used to heal self after spell cast
