@@ -87,6 +87,12 @@ public class SpellGrid : MonoBehaviour {
             grid[i] = false;
         }
         DrawGrid();
+        Invoke("SetAnimationState1", 0.15f);
+    }
+
+    void SetAnimationState1()
+    {
+        animator.SetInteger("State", 0);
     }
 
     void DrawGrid()
