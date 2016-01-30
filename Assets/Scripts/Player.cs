@@ -19,8 +19,8 @@ public class Player : MonoBehaviour {
     public GameObject spellSpawnLocation;
     public SpellGrid spellGrid;
     public Slider healthSlider;
-    Spell[] lastSpells = {null};
-    int currentSpellIndex = 0;
+    Spell[] lastSpells;
+    int currentSpellIndex = -1;
     public int lastSpellsToStore = 2;
 
     [SerializeField]
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour {
 
     public void Start()
     {
+        lastSpells = new Spell[lastSpellsToStore];
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         gameObject.tag = "Player";
         if (isPlayerOne)
@@ -143,14 +144,14 @@ public class Player : MonoBehaviour {
 
     public void CastSpell(Spell spell)
     {
+        float spellDmgMultiplier = 1f;
         //Check if player has used the spell earlier once or multiple times
-        /*if (lastSpells[currentSpellIndex] == null)
+        if (currentSpellIndex == -1)
 	    {
-		    
-	    }*/
-        if (lastSpells[currentSpellIndex] == spell)
+            currentSpellIndex = 0;
+	    }
+        else if (lastSpells[currentSpellIndex] == spell)
         {
-            float spellDmgMultiplier = 1f;
             for (int i = currentSpellIndex; i < lastSpellsToStore; i++)
 			{
 			    if (lastSpells[i] == spell)
@@ -160,12 +161,8 @@ public class Player : MonoBehaviour {
                 else
                     break;
 			}
-            TakeDamage(spell.cost * spellDmgMultiplier);
         }
-        else
-        {
-            TakeDamage(spell.cost);
-        }
+        TakeDamage(spell.cost * spellDmgMultiplier);
 
         lastSpells[currentSpellIndex] = spell;
         currentSpellIndex++;
