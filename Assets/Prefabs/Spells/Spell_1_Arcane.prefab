@@ -85,7 +85,7 @@ MonoBehaviour:
   spellDamage: 15
   spellHeal: 4
   spellSpeed: 200
-  spellPattern: 010001010100000000
+  spellPattern: 010001010100000100
 --- !u!212 &21226556
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -212,6 +212,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellPattern.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[7]
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
