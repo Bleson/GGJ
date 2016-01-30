@@ -23,12 +23,23 @@ public class SpellGrid : MonoBehaviour {
     {
         caster = _caster;
 
-        if (grid[hitKey] == 1)
+        //if center key is hit cast spell
+        if (grid[hitKey] == 4)
+            CastSpell();
+        //toggle grid value
+        else if (grid[hitKey] == 1)
             grid[hitKey] = 0;
         else
             grid[hitKey] = 1;
 
         DrawGrid();
+    }
+
+    void CastSpell()
+    {
+        Spell spell = (Spell)Resources.Load("/Prefabs/test spell");
+
+        caster.CastSpell(spell);
     }
 
     void DrawGrid()
