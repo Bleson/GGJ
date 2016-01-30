@@ -3,11 +3,11 @@ using System.Collections;
 
 public class SpellGrid : MonoBehaviour {
 
-    int[] grid = new int[9];
+    bool[] grid = new bool[9];
 
-    int[] testGrid = {1, 1, 1,
-                      0, 1, 0,
-                      0, 0, 0,};
+    bool[] testGrid = {true , true, true,
+                      false, true, false,
+                      false, false, false};
 
     public Button[] buttonArray = new Button[9];
     public Spell[] spells;
@@ -30,10 +30,10 @@ public class SpellGrid : MonoBehaviour {
         caster = _caster;
 
         // toggle grid value at right position
-        if (grid[hitKey] == 1)
-            grid[hitKey] = 0;
+        if (grid[hitKey] == true)
+            grid[hitKey] = false;
         else
-            grid[hitKey] = 1;
+            grid[hitKey] = true;
 
 
         DrawGrid();
@@ -70,7 +70,7 @@ public class SpellGrid : MonoBehaviour {
 
         for (int i = 0; i < grid.Length; i++)
         {
-            grid[i] = 0;
+            grid[i] = false;
         }
 
         DrawGrid();
@@ -83,31 +83,31 @@ public class SpellGrid : MonoBehaviour {
             switch (b.buttonID)
             {
                 case 1:
-                    b.SetColor(grid[0]);
+                    b.SetColor(grid[0] ? 1 : 0);
                     break;
                 case 2:
-                    b.SetColor(grid[1]);
+                    b.SetColor(grid[1] ? 1 : 0);
                     break;
                 case 3:
-                    b.SetColor(grid[2]);
+                    b.SetColor(grid[2] ? 1 : 0);
                     break;
                 case 4:
-                    b.SetColor(grid[3]);
+                    b.SetColor(grid[3] ? 1 : 0);
                     break;
                 case 5:
-                    b.SetColor(grid[4]);
+                    b.SetColor(grid[4] ? 1 : 0);
                     break;
                 case 6:
-                    b.SetColor(grid[5]);
+                    b.SetColor(grid[5] ? 1 : 0);
                     break;
                 case 7:
-                    b.SetColor(grid[6]);
+                    b.SetColor(grid[6] ? 1 : 0);
                     break;
                 case 8:
-                    b.SetColor(grid[7]);
+                    b.SetColor(grid[7] ? 1 : 0);
                     break;
                 case 9:
-                    b.SetColor(grid[8]);
+                    b.SetColor(grid[8] ? 1 : 0);
                     break;
                 default:
                     break;
