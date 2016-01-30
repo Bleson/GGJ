@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpellGrid : MonoBehaviour {
 
-    bool[] grid = new bool[9];
+    int[] grid = new int[9];
 
     Player caster;
 
@@ -15,16 +15,62 @@ public class SpellGrid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            SetGrid(3, GetComponent<Player>());
+        }
 	}
 
     public void SetGrid(int hitKey, Player _caster)
     {
         caster = _caster;
 
-        if (grid[hitKey])
-            grid[hitKey] = false;
+        if (grid[hitKey] == 1)
+            grid[hitKey] = 0;
         else
-            grid[hitKey] = true;
+            grid[hitKey] = 1;
+
+        DrawGrid();
+    }
+
+    void DrawGrid()
+    {
+        Button[] button = FindObjectsOfType(typeof(Button)) as Button[];
+
+        foreach (Button b in button)
+        {
+            switch (b.buttonID)
+            {
+                case 1:
+                    b.SetColor(grid[0]);
+                    break;
+                case 2:
+                    b.SetColor(grid[1]);
+                    break;
+                case 3:
+                    b.SetColor(grid[2]);
+                    break;
+                case 4:
+                    b.SetColor(grid[3]);
+                    break;
+                case 5:
+                    b.SetColor(grid[4]);
+                    break;
+                case 6:
+                    b.SetColor(grid[5]);
+                    break;
+                case 7:
+                    b.SetColor(grid[6]);
+                    break;
+                case 8:
+                    b.SetColor(grid[7]);
+                    break;
+                case 9:
+                    b.SetColor(grid[8]);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
