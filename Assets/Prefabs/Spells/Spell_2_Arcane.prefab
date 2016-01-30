@@ -1,32 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &140824
+--- !u!1 &101454
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 224: {fileID: 22438406}
-  - 114: {fileID: 11457684}
-  - 61: {fileID: 6152174}
-  - 50: {fileID: 5003800}
-  - 222: {fileID: 22212548}
-  - 111: {fileID: 11141692}
+  - 224: {fileID: 22472052}
+  - 114: {fileID: 11487744}
+  - 61: {fileID: 6172092}
+  - 50: {fileID: 5028676}
+  - 222: {fileID: 22210070}
+  - 114: {fileID: 11425428}
   m_Layer: 0
-  m_Name: spell 1
+  m_Name: Spell_2_Arcane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &5003800
+--- !u!50 &5028676
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140824}
+  m_GameObject: {fileID: 101454}
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -37,12 +37,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6152174
+--- !u!61 &6172092
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140824}
+  m_GameObject: {fileID: 101454}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -51,49 +51,62 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
---- !u!111 &11141692
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140824}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 28c445797d892b4419be8183e3d52cb1, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!114 &11457684
+--- !u!114 &11425428
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140824}
+  m_GameObject: {fileID: 101454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.90344834, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: ef15ad6ca9efe0246be1b2b1242529f2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &11487744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101454}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf2f102afa5665547a5a2d7463f92482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Spell 1
-  cost: 40
-  spellDamage: 30
-  spellHeal: 40
+  spellName: Spell 2
+  cost: 10
+  spellDamage: 40
+  spellHeal: 20
   spellSpeed: 600
-  spellPattern: 010101000100000000
---- !u!222 &22212548
+  spellPattern: 000000000100010101
+--- !u!222 &22210070
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140824}
---- !u!224 &22438406
+  m_GameObject: {fileID: 101454}
+--- !u!224 &22472052
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140824}
+  m_GameObject: {fileID: 101454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
@@ -102,7 +115,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -59, y: -88}
+  m_AnchoredPosition: {x: 138.04529, y: -38.156128}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
@@ -117,26 +130,22 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: cost
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: spellDamage
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: spellHeal
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: spellSpeed
       value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: spellHeal
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellDamage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: spellName
-      value: Spell 1
+      value: Spell 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 140824}
+  m_RootGameObject: {fileID: 101454}
   m_IsPrefabParent: 1
