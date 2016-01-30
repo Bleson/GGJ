@@ -18,6 +18,9 @@ public class Player : MonoBehaviour {
     public GameObject spellSpawnLocation;
     public SpellGrid spellGrid;
     public Slider healthSlider;
+    Spell[] lastSpells;
+    int currentSpellIndex = 0;
+    public int lastSpellsToStore = 2;
 
     [SerializeField]
     KeyCode[] playerOneInputs = new KeyCode[] { KeyCode.Q, KeyCode.W, KeyCode.E,
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour {
     {
         health = maxHealth;
         isAlive = true;
+        //spellGrid.Reset();
     }
 
     public void Start()
@@ -89,7 +93,38 @@ public class Player : MonoBehaviour {
     
     public void CastSpell(Spell spell)
     {
-        TakeDamage(spell.cost);
+        //Check if player has used the spell earlier once or multiple times
+        if (lastSpells[currentSpellIndex] == null)
+	    {
+		    
+	    }
+        else if (lastSpells[currentSpellIndex] == spell)
+        {
+            float spellDmgMultiplier = 1f;
+            for (int i = currentSpellIndex; i < lastSpellsToStore; i++)
+			{
+			    if (lastSpells[i] == spell)
+                {
+                    spellDmgMultiplier++;
+                }
+                else
+                    break;
+			}
+            TakeDamage(spell.cost * spellDmgMultiplier);
+        }
+        else
+        {
+            TakeDamage(spell.cost);
+        }
+
+        lastSpells[currentSpellIndex] = spell;
+        currentSpellIndex++;
+        if (currentSpellIndex > lastSpellsToStore - 1)
+        {
+            currentSpellIndex = 0;
+        }
+
+        //Create spell
         Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;
         clone.Initialize(this);
         clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
@@ -137,6 +172,6 @@ public class Player : MonoBehaviour {
             }
         }
         healthSlider.value = health;
-        Debug.Log("Current health: " + health +  " Target health: " + targetHealth);
+        //Debug.Log("Current health: " + health +  " Target health: " + targetHealth);
     }
 }
