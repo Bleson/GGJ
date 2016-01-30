@@ -403,9 +403,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.32751465, y: 32.918396}
+  m_Offset: {x: 17.756378, y: 3.3265471}
   serializedVersion: 2
-  m_Size: {x: 101.83736, y: 168.5272}
+  m_Size: {x: 65.669586, y: 109.343544}
 --- !u!95 &9543052
 Animator:
   serializedVersion: 3
@@ -1301,10 +1301,10 @@ RectTransform:
   - {fileID: 22419244}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 990, y: 8}
-  m_SizeDelta: {x: 102.1, y: 103.399994}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 300, y: 0}
+  m_SizeDelta: {x: 102.099976, y: 103.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22427526
 RectTransform:
@@ -1408,8 +1408,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: 27.9}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 75, y: -10}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22449608
 RectTransform:

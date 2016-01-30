@@ -185,5 +185,4 @@ public class Player : MonoBehaviour {
             clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
         }
     }
-
 }
