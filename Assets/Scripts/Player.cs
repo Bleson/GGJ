@@ -64,10 +64,6 @@ public class Player : MonoBehaviour {
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(5);
-        }
     }
 
     void FixedUpdate()

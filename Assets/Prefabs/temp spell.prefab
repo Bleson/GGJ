@@ -89,11 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2f102afa5665547a5a2d7463f92482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: 
+  spellName: Temp
   cost: 20
   spellDamage: 50
   spellHeal: 30
   spellSpeed: 400
+  spellPattern: 010101000000000000
 --- !u!222 &22254372
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -147,6 +148,38 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: spellSpeed
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[8]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[7]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[6]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellName
+      value: Temp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -10,6 +10,10 @@ public class Spell : MonoBehaviour {
     public float spellHeal = 5; // used to heal self after spell cast
     public float spellSpeed = 5; // spell flight speed
 
+    public bool[] spellPattern = {  false, false, false, 
+                                    false, false, false, 
+                                    false, false, false };
+
     Player caster; // used to store caster information. Casting spells requires the use of initialize method
     
 	// Use this for initialization
