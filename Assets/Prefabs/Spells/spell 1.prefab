@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6152174}
   - 50: {fileID: 5003800}
   - 222: {fileID: 22212548}
-  - 114: {fileID: 11421046}
+  - 111: {fileID: 11141692}
   m_Layer: 0
   m_Name: spell 1
   m_TagString: Untagged
@@ -51,33 +51,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
---- !u!114 &11421046
-MonoBehaviour:
+--- !u!111 &11141692
+Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140824}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ef15ad6ca9efe0246be1b2b1242529f2, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 28c445797d892b4419be8183e3d52cb1, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11457684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,7 +102,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138.04529, y: -38.156128}
+  m_AnchoredPosition: {x: -59, y: -88}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
