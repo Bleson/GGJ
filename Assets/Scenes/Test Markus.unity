@@ -258,11 +258,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22413968, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22413968, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 132056, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_Name
@@ -307,6 +307,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 171727984}
     m_Modifications:
+    - target: {fileID: 11419430, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
+      propertyPath: spells.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22481338, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -385,12 +389,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22413968, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22413968, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11419430, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
+      propertyPath: spells.Array.data[0]
+      value: 
+      objectReference: {fileID: 11440834, guid: b2deaa6a9cea15142a3a36a85ec4eb7e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
   m_IsPrefabParent: 0

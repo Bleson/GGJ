@@ -460,6 +460,8 @@ MonoBehaviour:
   - {fileID: 11469194}
   - {fileID: 11466268}
   - {fileID: 11495598}
+  spells:
+  - {fileID: 11440834, guid: b2deaa6a9cea15142a3a36a85ec4eb7e, type: 2}
 --- !u!114 &11426024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1088,7 +1090,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 554.00885, y: -65.199844}
+  m_AnchoredPosition: {x: 200, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22483210

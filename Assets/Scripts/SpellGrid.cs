@@ -22,11 +22,7 @@ public class SpellGrid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/master
 	}
 
     public void SetGrid(int hitKey, Player _caster)
@@ -38,8 +34,6 @@ public class SpellGrid : MonoBehaviour {
             grid[hitKey] = 0;
         else
             grid[hitKey] = 1;
-<<<<<<< HEAD
-=======
 
 
         DrawGrid();
@@ -79,7 +73,6 @@ public class SpellGrid : MonoBehaviour {
             grid[i] = 0;
         }
 
->>>>>>> origin/master
         DrawGrid();
     }
 
