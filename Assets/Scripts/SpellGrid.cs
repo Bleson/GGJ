@@ -67,12 +67,9 @@ public class SpellGrid : MonoBehaviour {
             else canCast = true;
         }
 
-<<<<<<< HEAD
-=======
         if (spell == null)
             canCast = false;
 
->>>>>>> origin/master
         if (canCast)
         {
             caster.CastSpell(spell);
