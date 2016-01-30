@@ -38,7 +38,7 @@ public class Spell : MonoBehaviour {
         caster = p;
 
         // shoot spell at different directions depending on player id
-        if (caster.id == 0)
+        if (caster.isPlayerOne)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(spellSpeed, 0);
         }

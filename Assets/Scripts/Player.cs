@@ -5,16 +5,30 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-    public int id; //Determines spell owner.
-    float maxHealth = 100;
-    float health = 100; //Current real health
-    float targetHealth = 100; // Health after hp drain
-    public float hpDrainPerSecond = 15; //How fast player gets healed or loses health.
+    public bool isPlayerOne; //Determines spell owner.
+    float maxHealth = 100f;
+    [SerializeField]
+    float health = 100f; //Current real health
+    [SerializeField]
+    float targetHealth = 100f; // Health after hp drain
+    public float hpDrainPerSecond = 30f; //How fast player gets healed or loses health.
+    [SerializeField]
     bool isAlive = true;
 
-    public GameObject spawnLocation;
+    public GameObject spellSpawnLocation;
+    public SpellGrid spellGrid;
     public Slider healthSlider;
     public Spell[] spellList;
+
+    [SerializeField]
+    KeyCode[] playerOneInputs = new KeyCode[] { KeyCode.Q, KeyCode.W, KeyCode.E,
+                                                KeyCode.A, KeyCode.S, KeyCode.D,
+                                                KeyCode.Z, KeyCode.X, KeyCode.C};
+    [SerializeField]
+    KeyCode[] playerTwoInputs = new KeyCode[] { KeyCode.Keypad7, KeyCode.Keypad8, KeyCode.Keypad9,
+                                                KeyCode.Keypad4, KeyCode.Keypad5, KeyCode.Keypad6,
+                                                KeyCode.Keypad1, KeyCode.Keypad2, KeyCode.Keypad3};
+    KeyCode[] playerInputs;
 
     public void Init()
     {
@@ -25,17 +39,35 @@ public class Player : MonoBehaviour {
     public void Start()
     {
         gameObject.tag = "Player";
+        if (isPlayerOne)
+        {
+            playerInputs = playerOneInputs;
+        }
+        else
+        {
+            playerInputs = playerTwoInputs;
+            Vector3 spellPosition = spellSpawnLocation.GetComponent<RectTransform>().localPosition;
+            spellSpawnLocation.GetComponent<RectTransform>().localPosition = new Vector3(-spellPosition.x, spellPosition.y, spellPosition.z);
+        }
     }
 
     void Update()
     {
+        if (isAlive)
+        {
+            for (int i = 0; i < playerInputs.Length; i++)
+            {
+                if (Input.GetKeyDown(playerInputs[i]))
+                {
+                    Debug.Log("Player " + isPlayerOne + " : " + i);
+
+                    spellGrid.SetGrid(i, this);
+                }
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(5);
-        }
-        if (Input.GetKeyDown(KeyCode.Q) && id == 0)
-        {
-            CastSpell(spellList[0]);
         }
     }
 
@@ -63,7 +95,7 @@ public class Player : MonoBehaviour {
     public void CastSpell(Spell spell)
     {
         TakeDamage(spell.cost);
-        Spell clone = Instantiate(spell, spawnLocation.transform.position, Quaternion.identity) as Spell;
+        Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;
         clone.Initialize(this);
         clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
     }
@@ -71,7 +103,7 @@ public class Player : MonoBehaviour {
     void Die()
     {
         isAlive = false;
-        Debug.Log("Player " + id + " died.");
+        Debug.Log("Player " + isPlayerOne + " died.");
     }
 
     /// <summary>
