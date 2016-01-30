@@ -504,6 +504,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d697de6d593006c40aa107a424f946dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonArray:
+  - {fileID: 11456978}
+  - {fileID: 11428898}
+  - {fileID: 11467750}
+  - {fileID: 11428496}
+  - {fileID: 11499326}
+  - {fileID: 11498660}
+  - {fileID: 11493306}
+  - {fileID: 11478808}
+  - {fileID: 11442080}
 --- !u!114 &11493306
 MonoBehaviour:
   m_ObjectHideFlags: 1

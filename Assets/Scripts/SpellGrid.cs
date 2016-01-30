@@ -5,6 +5,8 @@ public class SpellGrid : MonoBehaviour {
 
     int[] grid = new int[9];
 
+    public Button[] buttonArray = new Button[9];
+
     Player caster;
 
 
@@ -31,9 +33,7 @@ public class SpellGrid : MonoBehaviour {
 
     void DrawGrid()
     {
-        Button[] button = FindObjectsOfType(typeof(Button)) as Button[];
-
-        foreach (Button b in button)
+        foreach (Button b in buttonArray)
         {
             switch (b.buttonID)
             {
