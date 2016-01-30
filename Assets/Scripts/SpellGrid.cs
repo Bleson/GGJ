@@ -5,7 +5,12 @@ public class SpellGrid : MonoBehaviour {
 
     int[] grid = new int[9];
 
+    int[] testGrid = {1, 1, 1,
+                      0, 1, 1,
+                      1, 1, 1,};
+
     public Button[] buttonArray = new Button[9];
+    public Spell[] spells;
 
     Player caster;
 
@@ -17,17 +22,64 @@ public class SpellGrid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/master
 	}
 
     public void SetGrid(int hitKey, Player _caster)
     {
         caster = _caster;
 
+        // toggle grid value at right position
         if (grid[hitKey] == 1)
             grid[hitKey] = 0;
         else
             grid[hitKey] = 1;
+<<<<<<< HEAD
+=======
+
+
+        DrawGrid();
+
+        // if center button cast spell
+        if (hitKey == 4)
+        {
+            CastSpell();
+        }
+    }
+
+    void CastSpell()
+    {
+        bool isSpell = false;
+
+        //TODO: find spells based on inputted pattern
+        Spell spell = spells[0];
+        
+        for(int i = 0; i < grid.Length; i++)
+        {
+            if (grid[i] != testGrid[i])
+            {
+                isSpell = false;
+                break;
+            }
+            else
+                isSpell = true;
+        }
+
+        if (isSpell)
+        {
+            caster.CastSpell(spell);
+        }
+
+        for (int i = 0; i < grid.Length; i++)
+        {
+            grid[i] = 0;
+        }
+
+>>>>>>> origin/master
         DrawGrid();
     }
 
