@@ -18,7 +18,6 @@ public class Player : MonoBehaviour {
     public GameObject spellSpawnLocation;
     public SpellGrid spellGrid;
     public Slider healthSlider;
-    public Spell[] spellList;
 
     [SerializeField]
     KeyCode[] playerOneInputs = new KeyCode[] { KeyCode.Q, KeyCode.W, KeyCode.E,
