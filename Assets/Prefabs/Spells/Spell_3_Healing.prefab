@@ -85,7 +85,7 @@ MonoBehaviour:
   spellDamage: 30
   spellHeal: 40
   spellSpeed: 100
-  spellPattern: 010101000100000000
+  spellPattern: 000001000101010100
 --- !u!212 &21230834
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -149,6 +149,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: spellName
       value: Flower power
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[6]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[7]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

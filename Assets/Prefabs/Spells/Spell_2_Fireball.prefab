@@ -81,11 +81,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Lava shot
-  cost: 40
-  spellDamage: 30
-  spellHeal: 40
+  cost: 6
+  spellDamage: 9
+  spellHeal: 6
   spellSpeed: 100
-  spellPattern: 010101000100000000
+  spellPattern: 000100010101000100
 --- !u!212 &21226010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -149,6 +149,38 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: spellName
       value: Lava shot
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[7]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellDamage
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellHeal
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

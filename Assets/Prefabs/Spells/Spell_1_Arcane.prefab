@@ -81,11 +81,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Arcane
-  cost: 40
-  spellDamage: 30
-  spellHeal: 40
-  spellSpeed: 100
-  spellPattern: 010101000100000000
+  cost: 8
+  spellDamage: 15
+  spellHeal: 4
+  spellSpeed: 200
+  spellPattern: 010001010100000000
 --- !u!212 &21226556
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -152,19 +152,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cost
-      value: 40
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellDamage
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellHeal
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellSpeed
-      value: 600
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellName
@@ -205,6 +205,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: Spell_1_Arcane
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellPattern.Array.data[3]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
