@@ -19,9 +19,12 @@ public class Player : MonoBehaviour {
     public GameObject spellSpawnLocation;
     public SpellGrid spellGrid;
     public Slider healthSlider;
-    public Spell[] lastSpells;
+    public Slider targetHealthSlider;
+
+    Spell[] lastSpells;
+    public Spell[] lastSpellsReset;
     int currentSpellIndex = -1;
-    public int lastSpellsToStore = 2;
+    public int spellsToStore = 2;
 
     [SerializeField]
     KeyCode[] playerOneInputs = new KeyCode[] { KeyCode.Q, KeyCode.W, KeyCode.E,
@@ -37,13 +40,16 @@ public class Player : MonoBehaviour {
     {
         health = maxHealth;
         targetHealth = health;
+        healthSlider.value = health;
+        targetHealthSlider.value = targetHealth;
         isAlive = true;
-        //spellGrid.Reset();
+        spellGrid.Reset();
+        lastSpells = lastSpellsReset;
     }
 
     public void Start()
     {
-        lastSpells = new Spell[lastSpellsToStore];
+        lastSpells = lastSpellsReset;
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         gameObject.tag = "Player";
         if (isPlayerOne)
@@ -90,11 +96,13 @@ public class Player : MonoBehaviour {
     public void TakeDamage(float damageAmount)
     {
         targetHealth -= damageAmount;
+        targetHealthSlider.value = targetHealth;
     }
 
     public void Heal(float healAmount)
     {
         targetHealth += healAmount;
+        targetHealthSlider.value = targetHealth;
     }
 
     void Die()
@@ -113,10 +121,7 @@ public class Player : MonoBehaviour {
         if (healthDifference < -hpDrainPerSecond * Time.fixedDeltaTime)
         {
             health -= hpDrainPerSecond * Time.fixedDeltaTime;
-            if (health <= 0)
-            {
-                Die();
-            }
+            
         }
         else if (healthDifference > hpDrainPerSecond * Time.fixedDeltaTime)
         {
@@ -140,35 +145,42 @@ public class Player : MonoBehaviour {
             }
         }
         healthSlider.value = health;
+        if (health <= 0)
+        {
+            Die();
+        }
         //Debug.Log("Current health: " + health +  " Target health: " + targetHealth);
     }
 
     public void CastSpell(Spell spell)
     {
-        float spellCostMultiplier = 1f;
-        //Check if player has used the spell earlier once or multiple times
-        for (int i = 0; i < lastSpellsToStore; i++)
-		{
-			if (lastSpells[i] == spell)
-            {
-                spellCostMultiplier++;
-            }
-            else
-                break;
-		}
-        TakeDamage(spell.cost * spellCostMultiplier);
-
-        //Move last used spells in array
-        for (int i = lastSpellsToStore - 1; i > 0; i--)
+        if (gameController.playing)
         {
-            lastSpells[i] = lastSpells[i - 1];
-        }
-        lastSpells[0] = spell;
+            float spellCostMultiplier = 1f;
+            //Check if player has used the spell earlier once or multiple times
+            for (int i = 0; i < spellsToStore; i++)
+            {
+                if (lastSpells[i] == spell)
+                {
+                    spellCostMultiplier++;
+                }
+                else
+                    break;
+            }
+            TakeDamage(spell.cost * spellCostMultiplier);
 
-        //Create spell
-        Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;
-        clone.Initialize(this);
-        clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
+            //Move last used spells in array
+            for (int i = spellsToStore - 1; i > 0; i--)
+            {
+                lastSpells[i] = lastSpells[i - 1];
+            }
+            lastSpells[0] = spell;
+
+            //Create spell
+            Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;
+            clone.Initialize(this);
+            clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
+        }
     }
 
 }

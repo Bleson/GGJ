@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
     public GameObject gameOverScreen;
     public Player playerOne;
     public Player playerTwo;
+    public bool playing = true;
 
 	void Start () {
 	    
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour {
             gameOverHeader.GetComponent<Text>().text = "Player one wins!";
 	    }
         gameOverScreen.SetActive(true);
+        playing = false;
     }
 
     public void RestartGame()
@@ -31,5 +33,6 @@ public class GameController : MonoBehaviour {
         playerOne.Init();
         playerTwo.Init();
         gameOverScreen.SetActive(false);
+        playing = true;
     }
 }

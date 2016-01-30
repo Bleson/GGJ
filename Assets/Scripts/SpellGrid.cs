@@ -75,11 +75,15 @@ public class SpellGrid : MonoBehaviour {
             caster.CastSpell(spell);
         }
 
+        Reset();
+    }
+
+    public void Reset()
+    {
         for (int i = 0; i < grid.Length; i++)
         {
             grid[i] = false;
         }
-
         DrawGrid();
     }
 

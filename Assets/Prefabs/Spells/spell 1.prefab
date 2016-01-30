@@ -89,11 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2f102afa5665547a5a2d7463f92482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Temp
-  cost: 0
-  spellDamage: 0
-  spellHeal: 0
-  spellSpeed: 400
+  spellName: Spell 1
+  cost: 40
+  spellDamage: 30
+  spellHeal: 40
+  spellSpeed: 600
   spellPattern: 010101000100000000
 --- !u!222 &22212548
 CanvasRenderer:
@@ -131,7 +131,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cost
-      value: 0
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellDamage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellHeal
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellSpeed
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellName
+      value: Spell 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
