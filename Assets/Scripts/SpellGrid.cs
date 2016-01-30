@@ -66,10 +66,8 @@ public class SpellGrid : MonoBehaviour {
                 break;
         }
 
-        Debug.Log("1" + canCast + " " + spell.name);
         if (canCast)
         {
-            Debug.Log("2");
             caster.CastSpell(spell);
         }
 

@@ -17,11 +17,11 @@ public class GameController : MonoBehaviour {
     {
         if (losingPlayer == playerOne)
         {
-            gameOverHeader.GetComponent<GUIText>().text = "Player two wins!";
+            gameOverHeader.GetComponent<Text>().text = "Player two wins!";
         }
         else
 	    {
-            gameOverHeader.GetComponent<GUIText>().text = "Player one wins!";
+            gameOverHeader.GetComponent<Text>().text = "Player one wins!";
 	    }
         gameOverScreen.SetActive(true);
     }

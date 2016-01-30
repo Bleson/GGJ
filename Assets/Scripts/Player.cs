@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     public GameObject spellSpawnLocation;
     public SpellGrid spellGrid;
     public Slider healthSlider;
-    Spell[] lastSpells;
+    public Spell[] lastSpells;
     int currentSpellIndex = -1;
     public int lastSpellsToStore = 2;
 
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour {
     public void Init()
     {
         health = maxHealth;
+        targetHealth = health;
         isAlive = true;
         //spellGrid.Reset();
     }
@@ -66,7 +67,7 @@ public class Player : MonoBehaviour {
             {
                 if (Input.GetKeyDown(playerInputs[i]))
                 {
-                    Debug.Log("Player " + isPlayerOne + " : " + i);
+                    //Debug.Log("Player " + isPlayerOne + " : " + i);
 
                     spellGrid.SetGrid(i, this);
                 }
@@ -144,32 +145,25 @@ public class Player : MonoBehaviour {
 
     public void CastSpell(Spell spell)
     {
-        float spellDmgMultiplier = 1f;
+        float spellCostMultiplier = 1f;
         //Check if player has used the spell earlier once or multiple times
-        if (currentSpellIndex == -1)
-	    {
-            currentSpellIndex = 0;
-	    }
-        else if (lastSpells[currentSpellIndex] == spell)
-        {
-            for (int i = currentSpellIndex; i < lastSpellsToStore; i++)
-			{
-			    if (lastSpells[i] == spell)
-                {
-                    spellDmgMultiplier++;
-                }
-                else
-                    break;
-			}
-        }
-        TakeDamage(spell.cost * spellDmgMultiplier);
+        for (int i = 0; i < lastSpellsToStore; i++)
+		{
+			if (lastSpells[i] == spell)
+            {
+                spellCostMultiplier++;
+            }
+            else
+                break;
+		}
+        TakeDamage(spell.cost * spellCostMultiplier);
 
-        lastSpells[currentSpellIndex] = spell;
-        currentSpellIndex++;
-        if (currentSpellIndex > lastSpellsToStore - 1)
+        //Move last used spells in array
+        for (int i = lastSpellsToStore - 1; i > 0; i--)
         {
-            currentSpellIndex = 0;
+            lastSpells[i] = lastSpells[i - 1];
         }
+        lastSpells[0] = spell;
 
         //Create spell
         Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;

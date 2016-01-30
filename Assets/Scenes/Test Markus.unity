@@ -202,8 +202,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1154528905}
-  - {fileID: 708351676}
   - {fileID: 1848026011}
+  - {fileID: 708351676}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -248,7 +248,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22481338, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22481338, guid: 4ea313451cec4c74cb408b5c1c1cbfcf, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -552,10 +552,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 703d91761237e224c8ab3e6e39f0e64c, type: 3}
-    m_FontSize: 70
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 7
+    m_MinSize: 3
     m_MaxSize: 70
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -683,6 +683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a38be0da994ab42a768f1fb39462ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverHeader: {fileID: 580652808}
+  gameOverScreen: {fileID: 1848026010}
   playerOne: {fileID: 941182730}
   playerTwo: {fileID: 1758803883}
 --- !u!4 &634194273
@@ -696,7 +698,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &681022943
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +857,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701135311}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 634194272}
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &701135311
@@ -896,6 +909,88 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22481338, guid: 4ea313451cec4c74cb408b5c1c1cbfcf,
     type: 2}
   m_PrefabInternal: {fileID: 185619003}
+--- !u!1001 &780837447
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 980.3516
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 346.17877
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411434, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &804482974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1140,9 @@ MonoBehaviour:
   spellSpawnLocation: {fileID: 168513081}
   spellGrid: {fileID: 804482976}
   healthSlider: {fileID: 923080641}
+  lastSpells:
+  - {fileID: 11463234, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
+  - {fileID: 11463234, guid: ca19c69e795ea5e4c9965b786d1b3359, type: 2}
   lastSpellsToStore: 2
   playerOneInputs: 7100000077000000650000006100000073000000640000007a0000007800000063000000
   playerTwoInputs: 070100000801000009010000040100000501000006010000010100000201000003010000
@@ -1981,7 +2079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1848026011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1995,7 +2093,7 @@ RectTransform:
   - {fileID: 580652809}
   - {fileID: 1496542393}
   m_Father: {fileID: 171727984}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -21}
@@ -2061,4 +2159,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
