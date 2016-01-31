@@ -480,19 +480,27 @@ Prefab:
         type: 3}
     - target: {fileID: 22499852, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.66499853
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 22499852, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 6.6500006
+      value: 23.41
       objectReference: {fileID: 0}
     - target: {fileID: 22499852, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 33.87
+      value: 36.425
       objectReference: {fileID: 0}
     - target: {fileID: 22499852, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 33.9
+      value: 46.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 22499852, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.08663413
+      objectReference: {fileID: 0}
+    - target: {fileID: 22499852, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9962402
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
@@ -900,6 +908,27 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 482eae789077eac4f8dfe258b8ba0572, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &1304825616 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 118248, guid: c660451c96b44414e89f7de88af2f57a, type: 2}
+  m_PrefabInternal: {fileID: 708852529}
+--- !u!95 &1304825621
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304825616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80f4210d70a35f248911e145803bd5b5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

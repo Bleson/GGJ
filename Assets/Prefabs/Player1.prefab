@@ -285,6 +285,7 @@ GameObject:
   - 222: {fileID: 22266478}
   - 114: {fileID: 11401852}
   - 114: {fileID: 11403358}
+  - 95: {fileID: 9554996}
   m_Layer: 0
   m_Name: button5
   m_TagString: Untagged
@@ -423,6 +424,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9554996
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80f4210d70a35f248911e145803bd5b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11401852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,7 +460,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3a2dcdaf57e14e84d8087932304ac89e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 597ebbe4e74446d4eaa42f416f41307f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1185,7 +1203,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.5, y: 29.5}
+  m_AnchoredPosition: {x: -6, y: 30}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22404494
@@ -1492,7 +1510,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08663413, w: 0.9962402}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
@@ -1500,8 +1518,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.6, y: 8}
-  m_SizeDelta: {x: 25, y: 25}
+  m_AnchoredPosition: {x: 1.03, y: 23.41}
+  m_SizeDelta: {x: 36.425, y: 46.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22482790
 RectTransform:
