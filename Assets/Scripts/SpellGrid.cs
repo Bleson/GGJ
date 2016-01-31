@@ -72,7 +72,9 @@ public class SpellGrid : MonoBehaviour {
         }
 
         if (spell == null)
+        {
             canCast = false;
+        }
 
         if (canCast)
         {

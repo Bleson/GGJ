@@ -22,9 +22,13 @@ public class Button : MonoBehaviour {
         
         if (color == 0)
         {
-            rend.SetColor(Color.white);
+            //rend.SetColor(Color.white);
+            transform.GetChild(0).gameObject.SetActive(false);
         }
         else
-            rend.SetColor(Color.yellow);
+        {
+            //rend.SetColor(Color.yellow);
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 }
