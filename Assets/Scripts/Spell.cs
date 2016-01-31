@@ -20,7 +20,7 @@ public class Spell : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Explode();
+        //Explode();
         // if player is hit, does damage to player and heals caster
         if (other.gameObject.tag == "Player")
         {
