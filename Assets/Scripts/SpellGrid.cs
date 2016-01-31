@@ -89,10 +89,10 @@ public class SpellGrid : MonoBehaviour {
             grid[i] = false;
         }
         DrawGrid();
-        Invoke("SetAnimationState1", 0.15f);
+        Invoke("SetAnimationState0", 0.15f);
     }
 
-    void SetAnimationState1()
+    void SetAnimationState0()
     {
         animator.SetInteger("State", 0);
     }
