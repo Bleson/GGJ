@@ -74,11 +74,15 @@ public class SpellGrid : MonoBehaviour {
         if (spell == null)
         {
             canCast = false;
+            buttonArray[4].transform.GetChild(1).gameObject.SetActive(true);
+            Invoke("StopPoof", 0.5f);
         }
 
         if (canCast)
         {
             animator.SetInteger("State", 2);
+            buttonArray[4].transform.GetChild(0).gameObject.SetActive(true);
+            Invoke("StopGlow", 0.5f);
             caster.CastSpell(spell);
         }
         Reset();
@@ -97,6 +101,16 @@ public class SpellGrid : MonoBehaviour {
     void SetAnimationState1()
     {
         animator.SetInteger("State", 0);
+    }
+
+    void StopPoof()
+    {
+        buttonArray[4].transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    void StopGlow()
+    {
+        buttonArray[4].transform.GetChild(0).gameObject.SetActive(false);
     }
 
     void DrawGrid()
