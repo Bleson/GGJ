@@ -9,6 +9,8 @@ public class SpellGrid : MonoBehaviour {
 
     public Button[] buttonArray = new Button[9];
     public Spell[] spells;
+    public GameObject smoke;
+    public GameObject glowEffect;
 
     Player caster;
 
@@ -132,5 +134,10 @@ public class SpellGrid : MonoBehaviour {
                     break;
             }
         }
+    }
+
+    void SpawnEffects()
+    {
+
     }
 }
