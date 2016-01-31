@@ -74,14 +74,14 @@ public class SpellGrid : MonoBehaviour {
         if (spell == null)
         {
             canCast = false;
-            buttonArray[4].transform.GetChild(1).gameObject.SetActive(true);
+            buttonArray[4].transform.GetChild(2).gameObject.SetActive(true);
             Invoke("StopPoof", 0.5f);
         }
 
         if (canCast)
         {
             animator.SetInteger("State", 2);
-            buttonArray[4].transform.GetChild(0).gameObject.SetActive(true);
+            buttonArray[4].transform.GetChild(1).gameObject.SetActive(true);
             Invoke("StopGlow", 0.5f);
             caster.CastSpell(spell);
         }
@@ -105,12 +105,12 @@ public class SpellGrid : MonoBehaviour {
 
     void StopPoof()
     {
-        buttonArray[4].transform.GetChild(1).gameObject.SetActive(false);
+        buttonArray[4].transform.GetChild(2).gameObject.SetActive(false);
     }
 
     void StopGlow()
     {
-        buttonArray[4].transform.GetChild(0).gameObject.SetActive(false);
+        buttonArray[4].transform.GetChild(1).gameObject.SetActive(false);
     }
 
     void DrawGrid()
