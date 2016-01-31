@@ -86,6 +86,8 @@ MonoBehaviour:
   spellHeal: 18
   spellSpeed: 100
   spellPattern: 000001000101010100
+  hitParticleAmount: 3
+  hitParticle: {fileID: 156656, guid: 68b7a78332b189449b2deee80a7ecf7e, type: 2}
 --- !u!212 &21230834
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,6 +184,10 @@ Prefab:
       propertyPath: spellHeal
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitParticle
+      value: 
+      objectReference: {fileID: 156656, guid: 68b7a78332b189449b2deee80a7ecf7e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195926}
