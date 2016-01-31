@@ -1202,7 +1202,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  spellsToStore: 2
+  spellsToStore: 3
   playerOneInputs: 7100000077000000650000006100000073000000640000007a0000007800000063000000
   playerTwoInputs: 070100000801000009010000040100000501000006010000010100000201000003010000
 --- !u!114 &11460432
@@ -2341,7 +2341,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: spellsToStore
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 126050}

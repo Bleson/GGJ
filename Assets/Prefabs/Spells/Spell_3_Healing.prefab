@@ -81,9 +81,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Flower power
-  cost: 3
+  cost: 4
   spellDamage: 4
-  spellHeal: 18
+  spellHeal: 15
   spellSpeed: 100
   spellPattern: 000001000101010100
   hitParticleAmount: 3
@@ -174,7 +174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cost
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellDamage
@@ -182,7 +182,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellHeal
-      value: 18
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: hitParticle

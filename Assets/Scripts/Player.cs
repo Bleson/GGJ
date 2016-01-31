@@ -167,10 +167,10 @@ public class Player : MonoBehaviour {
                 {
                     spellCostMultiplier++;
                 }
-                else
-                    break;
+                //else
+                    //break;
             }
-            TakeDamage(spell.cost * spellCostMultiplier);
+            TakeDamage(Mathf.Pow(spell.cost, spellCostMultiplier) / 3);
 
             //Move last used spells in array
             for (int i = spellsToStore - 1; i > 0; i--)
