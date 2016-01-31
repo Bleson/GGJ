@@ -13,6 +13,9 @@ public class Spell : MonoBehaviour {
                                     false, false, false, 
                                     false, false, false };
 
+    public int hitParticleAmount = 3;
+    public GameObject hitParticle;
+
     Player caster; // used to store caster information. Casting spells requires the use of initialize method
     
 	// Use this for initialization
@@ -27,6 +30,7 @@ public class Spell : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Explode();
         // if player is hit, does damage to player and heals caster
         if (other.gameObject.tag == "Player")
         {
@@ -49,6 +53,16 @@ public class Spell : MonoBehaviour {
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-spellSpeed, 0);
             gameObject.transform.rotation = new Quaternion(0, 180f, 0, 0);
+        }
+    }
+
+    void Explode()
+    {
+        for (int i = 0; i < hitParticleAmount; i++)
+        {
+            GameObject clone;
+            clone = Object.Instantiate(hitParticle, gameObject.transform.position, transform.rotation) as GameObject;
+            clone.transform.SetParent(GameObject.Find("Canvas").transform);
         }
     }
 }
