@@ -180,7 +180,7 @@ public class Player : MonoBehaviour {
             lastSpells[0] = spell;
 
             //Create spell
-            Spell clone = Instantiate(spell, spellSpawnLocation.transform.position, Quaternion.identity) as Spell;
+            Spell clone = Instantiate(spell, new Vector3(spellSpawnLocation.transform.position.x, spellSpawnLocation.transform.position.y, 0f), Quaternion.identity) as Spell;
             clone.Initialize(this);
             clone.transform.SetParent(FindObjectOfType<Canvas>().transform);
         }
