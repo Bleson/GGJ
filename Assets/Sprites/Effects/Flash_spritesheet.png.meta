@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: 6cf37abc104bf4044847197269b0f88a
+timeCreated: 1454210527
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Flash_spritesheet_0
+    21300002: Flash_spritesheet_1
+    21300004: Flash_spritesheet_2
+    21300006: Flash_spritesheet_3
+    21300008: Flash_spritesheet_4
+    21300010: Flash_spritesheet_5
+    21300012: Flash_spritesheet_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Flash_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 35}
+        - {x: -11, y: 35}
+        - {x: -27, y: 29}
+        - {x: -27, y: -10}
+        - {x: -19, y: -18}
+        - {x: 23, y: -18}
+        - {x: 32, y: -4}
+        - {x: 32, y: 26}
+        - {x: 31, y: 28}
+    - name: Flash_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 37}
+        - {x: -32, y: -14}
+        - {x: -17, y: -22}
+        - {x: 32, y: -22}
+        - {x: 37, y: -8}
+        - {x: 37, y: 37}
+    - name: Flash_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 45}
+        - {x: -27, y: 45}
+        - {x: -36, y: 39}
+        - {x: -36, y: -10}
+        - {x: -29, y: -27}
+        - {x: 34, y: -27}
+        - {x: 37, y: -21}
+        - {x: 37, y: 31}
+        - {x: 26, y: 44}
+    - name: Flash_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 66}
+        - {x: -12, y: 65}
+        - {x: -39, y: 42}
+        - {x: -45, y: 1}
+        - {x: -45, y: -51}
+        - {x: 14, y: -51}
+        - {x: 46, y: -41}
+        - {x: 46, y: 60}
+        - {x: 33, y: 66}
+    - name: Flash_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 66}
+        - {x: -89, y: 1}
+        - {x: -89, y: -31}
+        - {x: -88, y: -41}
+        - {x: -47, y: -64}
+        - {x: 33, y: -64}
+        - {x: 68, y: -23}
+        - {x: 68, y: 65}
+        - {x: 67, y: 66}
+    - name: Flash_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: -74}
+        - {x: -2, y: -74}
+        - {x: 133, y: -31}
+        - {x: 133, y: 58}
+        - {x: 126, y: 76}
+        - {x: 54, y: 76}
+        - {x: 38, y: 70}
+        - {x: 5, y: 39}
+        - {x: 18, y: 21}
+        - {x: -1, y: 44}
+        - {x: -39, y: 42}
+        - {x: -108, y: 13}
+        - {x: -121, y: -25}
+        - {x: -121, y: -70}
+        - {x: -109, y: -74}
+        - {x: -69, y: -74}
+        - {x: -68, y: -63}
+        - {x: -68, y: -58}
+        - {x: -67, y: -69}
+    - name: Flash_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78, y: -71}
+        - {x: -79, y: -74}
+        - {x: -79, y: -108}
+        - {x: -67, y: -114}
+        - {x: -25, y: -114}
+        - {x: -25, y: -82}
+        - {x: -43, y: -71}
+      - - {x: -142, y: -93}
+        - {x: -87, y: -93}
+        - {x: -71, y: -85}
+        - {x: -71, y: -42}
+        - {x: -80, y: -23}
+        - {x: -124, y: -13}
+        - {x: -162, y: -13}
+        - {x: -162, y: -68}
+      - - {x: 149, y: 29}
+        - {x: 149, y: -17}
+        - {x: 151, y: -19}
+        - {x: 182, y: -19}
+        - {x: 188, y: -17}
+        - {x: 188, y: 29}
+      - - {x: 53, y: 89}
+        - {x: 53, y: 28}
+        - {x: 81, y: 6}
+        - {x: 142, y: 6}
+        - {x: 142, y: 48}
+        - {x: 117, y: 89}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
