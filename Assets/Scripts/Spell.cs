@@ -17,16 +17,6 @@ public class Spell : MonoBehaviour {
     public GameObject hitParticle;
 
     Player caster; // used to store caster information. Casting spells requires the use of initialize method
-    
-	// Use this for initialization
-	void Start ()
-    {
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -61,7 +51,7 @@ public class Spell : MonoBehaviour {
         for (int i = 0; i < hitParticleAmount; i++)
         {
             GameObject clone;
-            clone = Object.Instantiate(hitParticle, gameObject.transform.position, transform.rotation) as GameObject;
+            clone = Object.Instantiate(hitParticle, new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y, gameObject.transform.position.z + 10), transform.rotation) as GameObject;
             clone.transform.SetParent(GameObject.Find("Canvas").transform);
         }
     }
